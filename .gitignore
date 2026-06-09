@@ -1,0 +1,20 @@
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Secrets / private state
+.env
+*.key
+*.pem
+*.p12
+*.pfx
+*token*
+*secret*
+credentials.json
+
+# Runtime/private caches
+.cache/
+media_cache/
+.browser/
+profiles/

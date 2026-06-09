@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boris Winebrand — AI Automation for Cloud & Security Operations</title>
+  <meta name="description" content="Private recruiter portfolio: Hermes/OpenClaw-style AI automation for IT, cloud security operations, M365/Azure readiness, and agentic workflows." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08090a;
+      --bg-deep: #010102;
+      --panel: #0f1011;
+      --surface: rgba(255,255,255,0.035);
+      --surface-strong: rgba(255,255,255,0.06);
+      --ink: #f7f8f8;
+      --text: #d0d6e0;
+      --muted: #8a8f98;
+      --subtle: #62666d;
+      --line: rgba(255,255,255,0.08);
+      --line-soft: rgba(255,255,255,0.05);
+      --accent: #7170ff;
+      --accent-dark: #5e6ad2;
+      --accent-soft: rgba(113,112,255,0.16);
+      --ok: #10b981;
+      --warn: #fbbf24;
+      --danger: #fb7185;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-feature-settings: "cv01", "ss03";
+      color: var(--text);
+      background:
+        radial-gradient(circle at 70% 5%, rgba(113,112,255,.18), transparent 34rem),
+        radial-gradient(circle at 15% 20%, rgba(16,185,129,.08), transparent 28rem),
+        linear-gradient(180deg, var(--bg-deep), var(--bg) 22rem, #07080a 100%);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    a { color: var(--ink); text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    .nav {
+      position: sticky; top: 0; z-index: 40;
+      backdrop-filter: blur(18px);
+      background: rgba(8,9,10,.72);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .nav-inner {
+      max-width: 1180px; margin: 0 auto; padding: 14px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 510; letter-spacing: -0.13px; }
+    .brand-mark {
+      width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 7px;
+      background: linear-gradient(145deg, rgba(113,112,255,.34), rgba(255,255,255,.03));
+      display: grid; place-items: center; box-shadow: inset 0 0 20px rgba(113,112,255,.08);
+    }
+    .brand-mark:before { content: "B"; color: var(--ink); font-family: var(--mono); font-size: 12px; }
+    .nav-links { display: flex; align-items: center; gap: 18px; font-size: 13px; font-weight: 510; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--ink); }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+    .hero { padding: 82px 0 58px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font: 500 12px/1.4 var(--mono); color: var(--muted);
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 7px 10px; background: rgba(255,255,255,.025);
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 18px rgba(16,185,129,.7); }
+    h1 {
+      color: var(--ink); margin: 22px 0 18px;
+      font-size: clamp(42px, 7vw, 76px); line-height: .98; font-weight: 510;
+      letter-spacing: clamp(-1.5px, -0.12vw, -0.7px); max-width: 980px;
+    }
+    .lead { max-width: 760px; font-size: 18px; line-height: 1.65; color: var(--text); margin-bottom: 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; min-height: 42px;
+      padding: 10px 14px; border-radius: 7px; border: 1px solid var(--line);
+      background: rgba(255,255,255,.03); color: var(--ink); font-weight: 510; font-size: 14px;
+    }
+    .btn.primary { background: var(--accent-dark); border-color: rgba(255,255,255,.16); }
+    .btn:hover { transform: translateY(-1px); color: var(--ink); background: rgba(255,255,255,.055); }
+    .btn.primary:hover { background: #828fff; }
+
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; margin-top: 42px; align-items: stretch; }
+    .terminal, .card, .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border: 1px solid var(--line); border-radius: 14px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.16), 0 24px 60px rgba(0,0,0,.28);
+    }
+    .terminal { overflow: hidden; min-height: 345px; }
+    .terminal-bar { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line-soft); background: rgba(255,255,255,.025); }
+    .traffic { width: 10px; height: 10px; border-radius: 50%; background: #3a3d44; }
+    .traffic:nth-child(1){ background:#fb7185; } .traffic:nth-child(2){ background:#fbbf24; } .traffic:nth-child(3){ background:#10b981; }
+    .terminal-title { margin-left: 8px; color: var(--muted); font: 12px var(--mono); }
+    .terminal-body { padding: 18px; font: 13px/1.7 var(--mono); color: #c8d0df; }
+    .prompt { color: var(--accent); }
+    .ok { color: var(--ok); } .warn { color: var(--warn); } .dim { color: var(--subtle); }
+
+    .signal-grid { display: grid; gap: 12px; }
+    .signal { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.025); }
+    .signal strong { display:block; color: var(--ink); font-size: 15px; margin-bottom: 5px; }
+    .signal span { color: var(--muted); font-size: 14px; }
+
+    section { padding: 54px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom: 22px; }
+    h2 { color: var(--ink); font-size: clamp(28px,4vw,44px); line-height: 1.04; font-weight: 510; letter-spacing: -0.9px; margin: 0; max-width: 760px; }
+    .section-note { max-width: 400px; color: var(--muted); font-size: 14px; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card { padding: 20px; box-shadow: none; }
+    .card h3 { color: var(--ink); font-size: 19px; font-weight: 590; margin: 0 0 8px; letter-spacing: -0.24px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.62; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top: 14px; }
+    .tag { font: 500 11px var(--mono); color: var(--text); border:1px solid var(--line); border-radius:999px; padding:5px 8px; background: rgba(255,255,255,.02); }
+
+    .case { display: grid; grid-template-columns: .8fr 1.2fr; gap: 20px; }
+    .panel { padding: 22px; }
+    .panel h3 { color: var(--ink); margin: 0 0 12px; font-size: 22px; letter-spacing: -0.35px; }
+    .panel ul { margin: 0; padding-left: 18px; color: var(--text); }
+    .panel li { margin: 9px 0; }
+    .architecture { display:grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 18px; }
+    .node { padding: 14px; min-height: 84px; border:1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.025); }
+    .node .label { font: 500 11px var(--mono); color: var(--accent); margin-bottom: 8px; }
+    .node .name { color: var(--ink); font-weight: 510; font-size: 14px; }
+    .arrow { display:flex; align-items:center; justify-content:center; color: var(--subtle); font-family: var(--mono); }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .timeline { border-left: 1px solid var(--line); padding-left: 18px; }
+    .step { position: relative; margin-bottom: 18px; }
+    .step:before { content:""; position:absolute; left:-24px; top:4px; width:10px; height:10px; border-radius:50%; background: var(--accent); box-shadow:0 0 0 4px rgba(113,112,255,.12); }
+    .step strong { color: var(--ink); display:block; margin-bottom:4px; }
+    .step span { color: var(--muted); font-size: 14px; }
+
+    .proof-grid { display:grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    .proof { padding:16px; border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,.025); }
+    .proof .k { color: var(--ink); font-size: 22px; font-weight:510; letter-spacing:-.5px; }
+    .proof .v { color: var(--muted); font-size:13px; margin-top: 5px; }
+
+    .footer { padding: 38px 0 60px; color: var(--subtle); border-top: 1px solid var(--line-soft); margin-top: 40px; }
+    .footer strong { color: var(--text); }
+
+    @media (max-width: 900px) {
+      .nav-links { display:none; }
+      .hero-grid, .case, .two { grid-template-columns: 1fr; }
+      .cards, .proof-grid { grid-template-columns: 1fr 1fr; }
+      .section-head { display:block; }
+      .section-note { margin-top: 12px; }
+    }
+    @media (max-width: 560px) {
+      .cards, .proof-grid, .architecture { grid-template-columns: 1fr; }
+      .hero { padding-top: 54px; }
+      .terminal-body { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark"></span><span>Boris Winebrand</span></a>
+      <div class="nav-links">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#case-study">Case study</a>
+        <a href="#security">Cloud security</a>
+        <a href="#recruiter">Recruiter brief</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <div class="container hero">
+      <div class="eyebrow"><span class="dot"></span> Private recruiter portfolio · Germany-focused · AI + Cloud Security Operations</div>
+      <h1>AI automation for IT, cloud security operations, and agentic workflows.</h1>
+      <p class="lead">A proprietary portfolio concept for headhunters and recruiters: 14 years of infrastructure and systems experience, repositioned around Hermes/OpenClaw-style agents, Microsoft 365/Azure security, Copilot readiness, identity hardening, and practical automation that runs on a VPS through Telegram.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#case-study">View flagship case study →</a>
+        <a class="btn" href="#recruiter">Recruiter one-page fit</a>
+        <a class="btn" href="#portfolio">Compare portfolio angles</a>
+      </div>
+
+      <div class="hero-grid">
+        <div class="terminal" aria-label="Agent operations terminal mockup">
+          <div class="terminal-bar"><span class="traffic"></span><span class="traffic"></span><span class="traffic"></span><span class="terminal-title">hermes-secops-agent / private VPS</span></div>
+          <div class="terminal-body">
+            <span class="prompt">$</span> run daily_m365_security_readiness<br />
+            <span class="ok">✓</span> collect: Entra ID policy checklist, risky consent controls<br />
+            <span class="ok">✓</span> inspect: SharePoint/Copilot readiness questions<br />
+            <span class="ok">✓</span> generate: recruiter-safe executive summary<br />
+            <span class="warn">!</span> flag: manual tenant verification required before client use<br /><br />
+            <span class="prompt">agent.pipeline</span><br />
+            ├─ Telegram intake + notifications<br />
+            ├─ local memory / Obsidian-style notes<br />
+            ├─ Azure/M365 security checklist automation<br />
+            ├─ FinOps / GenAI cost-control module<br />
+            └─ human approval gates for sensitive actions<br /><br />
+            <span class="dim">positioning:</span> senior IT infra + cloud security + AI agent operations
+          </div>
+        </div>
+        <div class="signal-grid">
+          <div class="signal"><strong>Not “AI chatbot”.</strong><span>Positioned as an operations layer: agents, memory, checklists, evidence, notifications, and safe handoffs.</span></div>
+          <div class="signal"><strong>Not pure DevOps.</strong><span>Anchored in real IT infrastructure, Windows/M365/Azure, identity, endpoint, support, VMware/labs, and troubleshooting.</span></div>
+          <div class="signal"><strong>Germany recruiter framing.</strong><span>Targets Cloud Security Operations, AI Automation Engineer, M365/Azure Security, Infrastructure Automation, and Copilot Readiness roles.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <h2>Two portfolio angles, one coherent story.</h2>
+          <div class="section-note">Use Angle A for conservative enterprise recruiters. Use Angle B for AI-forward teams, startups, and automation-heavy cloud/security roles.</div>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Angle A — Enterprise Cloud Security Ops</h3>
+            <p>Lead with Microsoft 365/Azure security, identity hardening, Copilot readiness, Zero Trust, Conditional Access, and operational checklists.</p>
+            <div class="tag-row"><span class="tag">M365</span><span class="tag">Azure</span><span class="tag">Entra ID</span><span class="tag">SecOps</span></div>
+          </article>
+          <article class="card">
+            <h3>Angle B — Hermes/OpenClaw-style Agent Operations</h3>
+            <p>Lead with a 24/7 AI automation layer: VPS agent, Telegram interface, local memory, sub-agents, watchdogs, and human approval gates.</p>
+            <div class="tag-row"><span class="tag">Hermes</span><span class="tag">Agents</span><span class="tag">Telegram</span><span class="tag">VPS</span></div>
+          </article>
+          <article class="card">
+            <h3>Angle C — Hybrid AI Infrastructure</h3>
+            <p>The strongest combined positioning: senior infra engineer who can make agentic automation reliable, auditable, and safe for IT/cloud operations.</p>
+            <div class="tag-row"><span class="tag">Hybrid cloud</span><span class="tag">FinOps</span><span class="tag">Automation</span><span class="tag">Reliability</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-study">
+      <div class="container">
+        <div class="section-head">
+          <h2>Flagship case study: Hermes SecOps Copilot.</h2>
+          <div class="section-note">A recruiter-safe case study title. It sounds enterprise-relevant without exposing private implementation details.</div>
+        </div>
+        <div class="case">
+          <div class="panel">
+            <h3>Problem</h3>
+            <ul>
+              <li>Cloud/security teams drown in repetitive checks: identity, consent, mailbox rules, Copilot readiness, exposed management paths.</li>
+              <li>AI tools are useful but fragile without memory, auditability, operational guardrails, and human approvals.</li>
+              <li>Recruiters need proof of current AI automation capability, not just years of infrastructure experience.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Solution architecture</h3>
+            <p style="color:var(--muted);margin-top:0">A private Hermes/OpenClaw-style agent running on Linux VPS, reached via Telegram, backed by local memory and structured runbooks. The portfolio version demonstrates the operating model; client/tenant execution requires explicit authorization.</p>
+            <div class="architecture">
+              <div class="node"><div class="label">INPUT</div><div class="name">Telegram / recruiter prompt / checklist request</div></div>
+              <div class="node"><div class="label">AGENT</div><div class="name">Hermes orchestration + sub-agent tasks</div></div>
+              <div class="node"><div class="label">MEMORY</div><div class="name">Local notes, evidence, decisions, reusable runbooks</div></div>
+              <div class="node"><div class="label">SECURITY</div><div class="name">Human approval gates for sensitive actions</div></div>
+              <div class="node"><div class="label">MODULES</div><div class="name">M365 readiness, FinOps, cloud posture checks</div></div>
+              <div class="node"><div class="label">OUTPUT</div><div class="name">Executive summary, risk list, next actions</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="security">
+      <div class="container">
+        <div class="section-head">
+          <h2>Security operations themes recruiters understand.</h2>
+          <div class="section-note">These are concrete enough for hiring managers and broad enough to fit Germany roles.</div>
+        </div>
+        <div class="two">
+          <div class="panel">
+            <h3>M365 / Azure security automation</h3>
+            <div class="timeline">
+              <div class="step"><strong>Identity hardening</strong><span>Conditional Access, MFA posture, risky sign-ins, user consent restrictions, privileged access questions.</span></div>
+              <div class="step"><strong>Copilot readiness</strong><span>SharePoint permissions, oversharing, Purview labels, DLP, data exposure risk before AI rollout.</span></div>
+              <div class="step"><strong>Security visibility</strong><span>Defender for Cloud/Sentinel posture questions, mailbox compromise checks, canary-token style detection ideas.</span></div>
+              <div class="step"><strong>Cost and reliability</strong><span>FinOps and GenAI cost-control reminders, Azure OpenAI deployment cost gates, VPS/agent monitoring.</span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Agent operations discipline</h3>
+            <div class="timeline">
+              <div class="step"><strong>Persistent interface</strong><span>Telegram-first access for quick operational prompts and alerts.</span></div>
+              <div class="step"><strong>Local memory</strong><span>Markdown/Obsidian-style memory to avoid multi-day context drift and preserve decisions.</span></div>
+              <div class="step"><strong>Safe autonomy</strong><span>Human approval before irreversible actions, tenant changes, credential use, or outreach.</span></div>
+              <div class="step"><strong>Evidence-oriented output</strong><span>Readable summaries, artifacts, blockers, and implementation locations rather than vague AI responses.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recruiter">
+      <div class="container">
+        <div class="section-head">
+          <h2>Recruiter one-line positioning.</h2>
+          <div class="section-note">Use this in LinkedIn, CV summaries, intro messages, or as the first paragraph of a portfolio PDF.</div>
+        </div>
+        <div class="panel">
+          <p style="font-size:22px;line-height:1.55;color:var(--ink);margin:0 0 18px;letter-spacing:-.25px">Senior IT infrastructure and cloud operations professional building AI automation for Microsoft 365/Azure security, Copilot readiness, identity hardening, hybrid cloud operations, and agent-driven workflows.</p>
+          <div class="proof-grid">
+            <div class="proof"><div class="k">14y</div><div class="v">IT infra/cloud/systems background</div></div>
+            <div class="proof"><div class="k">M365</div><div class="v">Identity, endpoint, admin, security operations angle</div></div>
+            <div class="proof"><div class="k">AI Ops</div><div class="v">Hermes/OpenClaw-style agent orchestration</div></div>
+            <div class="proof"><div class="k">DE</div><div class="v">Germany-focused recruiter/headhunter framing</div></div>
+          </div>
+          <div class="tag-row" style="margin-top:18px"><span class="tag">Cloud Security Operations</span><span class="tag">AI Automation Engineer</span><span class="tag">Azure/M365 Security</span><span class="tag">Infrastructure Automation</span><span class="tag">Copilot Readiness</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>Confidential portfolio draft.</strong> This artifact is designed to impress recruiters without overstating production claims. Treat it as a private positioning asset; technical details can be expanded into a public demo, PDF, or GitHub-safe case study later.
+    </div>
+  </footer>
+</body>
+</html>
