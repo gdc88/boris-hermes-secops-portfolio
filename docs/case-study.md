@@ -4,7 +4,7 @@
 
 **Working title:** Hermes SecOps Copilot  
 **Positioning:** AI automation for IT, cloud security operations, and agentic workflows  
-**Target audience:** Germany headhunters, recruiters, hiring managers for Cloud Security Operations, AI Automation Engineer, Azure/M365 Security, Infrastructure Automation, and Copilot Readiness roles.
+**Target audience:** Public technical portfolio readers evaluating Cloud Security Operations, AI Automation Engineer, Azure/M365 Security, Infrastructure Automation, and Copilot Readiness capabilities.
 
 ## Executive summary
 
@@ -14,13 +14,13 @@ The flagship portfolio concept is a private Hermes/OpenClaw-style agentic automa
 
 The point is not to present “a chatbot.” The point is to show that Boris can make AI useful in real IT operations: persistent, monitored, structured, evidence-oriented, and controlled by human approval gates.
 
-## Recruiter-safe positioning
+## Public-safe positioning
 
 > Senior IT infrastructure and cloud operations professional building AI automation for Microsoft 365/Azure security, Copilot readiness, identity hardening, hybrid cloud operations, and agent-driven workflows.
 
 ## Why this portfolio is strong for Germany
 
-- Germany recruiters understand infrastructure, M365, Azure, security operations, and governance better than vague “AI founder” claims.
+- The German market values infrastructure, M365, Azure, security operations, and governance more than vague “AI founder” claims.
 - AI automation becomes credible when anchored in Boris’s real background: Windows/Server, M365/Azure AD, VMware/labs, networking, infrastructure troubleshooting, endpoint support, Google Workspace, Linux basics, and operational support.
 - The portfolio bridges a common hiring gap: companies want AI automation, but they also need someone who understands operations, identity, risk, documentation, and safe change control.
 
@@ -66,7 +66,7 @@ A private Hermes/OpenClaw-style AI operations assistant running on a Linux VPS.
    - mailbox compromise checks
    - user communication/training
 4. Agent marks any item requiring real tenant access as **manual verification required**.
-5. Agent produces a recruiter-safe report and optionally a technical runbook.
+5. Agent produces a public-safe report and optionally a technical runbook.
 
 ### Workflow: Identity hardening mini-assessment
 
@@ -94,7 +94,7 @@ A private Hermes/OpenClaw-style AI operations assistant running on a Linux VPS.
    - budget alerts and usage review
    - human approval before deleting or changing resources
 
-## Recruiter proof points
+## Technical proof points
 
 This portfolio should demonstrate:
 
@@ -115,12 +115,6 @@ This portfolio should demonstrate:
 - Hybrid Cloud Operations Engineer
 - Technical Support / Systems Engineer with AI Automation focus
 - Cloud Infrastructure Engineer with SecOps responsibilities
-
-## LinkedIn / CV project block
-
-**Hermes SecOps Copilot — Private AI Automation Portfolio**  
-Built a private Hermes/OpenClaw-style AI operations concept for cloud/security workflows: Telegram-based agent interface, local memory/runbooks, M365/Azure security checklist automation, Copilot readiness triage, identity hardening prompts, FinOps/GenAI cost-control guidance, and human approval gates for sensitive actions. Designed to show how AI agents can support real IT operations safely, with evidence-oriented summaries and manual-verification boundaries.
-
 ## Do not overclaim
 
 Avoid saying:
@@ -134,13 +128,13 @@ Use instead:
 
 - “Hermes/OpenClaw-style agentic automation.”
 - “Private portfolio prototype.”
-- “Recruiter-safe case study.”
+- “Public-safe case study.”
 - “Security readiness workflow.”
 - “Manual verification required before tenant/client use.”
 
 ## Next build options
 
 1. **Public-safe GitHub repo:** sanitized runbooks, sample checklists, mock data, no secrets.
-2. **PDF version:** one-page recruiter brief + one-page architecture case study.
+2. **PDF version:** one-page technical brief + one-page architecture case study.
 3. **Live demo:** local or private VPS demo that accepts mock tenant scenarios and outputs reports.
-4. **German-market variant:** rewrite with German recruiter keywords and German job-title mapping.
+4. **German-market variant:** rewrite with German market keywords and German job-title mapping.

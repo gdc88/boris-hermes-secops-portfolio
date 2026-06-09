@@ -2,7 +2,7 @@
 
 Portfolio-safe project for **AI automation in IT, cloud security operations, and agentic workflows**.
 
-This repository presents a recruiter-facing case study around a Hermes/OpenClaw-style operational assistant: a VPS-based AI agent interface for Microsoft 365/Azure security readiness, Copilot readiness, identity hardening, FinOps/GenAI cost-control prompts, local memory/runbooks, and human approval gates.
+This repository presents a public portfolio case study around a Hermes/OpenClaw-style operational assistant: a VPS-based AI agent interface for Microsoft 365/Azure security readiness, Copilot readiness, identity hardening, FinOps/GenAI cost-control prompts, local memory/runbooks, and human approval gates.
 
 > Status: portfolio/prototype documentation. It is intentionally sanitized and does not include private credentials, tenant data, private Telegram messages, browser sessions, or customer records.
 
@@ -11,7 +11,6 @@ This repository presents a recruiter-facing case study around a Hermes/OpenClaw-
 - GitHub Pages site: https://gdc88.github.io/boris-hermes-secops-portfolio/
 - PDF version: [`docs/Boris-Hermes-SecOps-Portfolio.pdf`](docs/Boris-Hermes-SecOps-Portfolio.pdf)
 - Detailed case study: [`docs/case-study.md`](docs/case-study.md)
-- Recruiter one-pager: [`docs/headhunter-onepager.md`](docs/headhunter-onepager.md)
 
 ## Professional positioning
 
@@ -26,7 +25,7 @@ This repository presents a recruiter-facing case study around a Hermes/OpenClaw-
 - Turning AI-agent tooling into practical IT/cloud operations workflows.
 - Microsoft 365/Azure security readiness thinking: identity, access, consent, Copilot data exposure, and security posture.
 - Agentic workflow design: Telegram interface, local memory, sub-tasks, evidence-oriented reports, and human approval gates.
-- Recruiter-safe communication: clear claims, manual-verification boundaries, and no overstatement of production scope.
+- Public-safe communication: clear claims, manual-verification boundaries, and no overstatement of production scope.
 
 ## Target roles
 
@@ -50,13 +49,9 @@ This repository avoids publishing:
 
 Real tenant execution would require explicit authorization, scoped credentials, logging, and human approval before sensitive actions.
 
-## Suggested recruiter summary
+## Suggested Short positioning
 
 > 14-year IT infrastructure/cloud/systems professional repositioning into AI automation for cloud security operations, Microsoft 365/Azure readiness, Copilot governance, identity hardening, and agentic IT workflows.
-
-## Notes on LinkedIn
-
-A LinkedIn link is useful when this repo is used for recruiters, but it should point to the exact polished profile URL. It is intentionally not hardcoded here until the final LinkedIn URL/profile wording is confirmed.
 ## Portfolio evolution
 
 This repository is part of an evolving AI-automation portfolio, not a one-off demo. The projects show a growth path from job-search automation and local MVPs toward safer IT/cloud/security operations with agentic workflows.
@@ -67,11 +62,11 @@ Current portfolio map:
 - **[AI Automation Ops Lab](https://github.com/gdc88/boris-ai-automation-ops-lab)** — Operational base layer: self-hosted AI automation patterns, Telegram delivery, scheduled agents, browser-assisted workflows, and infrastructure operations thinking.
 - **[Ops Agent Playbook Runner](https://github.com/gdc88/ops-agent-playbook-runner)** — Engineering proof layer: safe, auditable, dry-run-first operations playbooks with evidence bundles and policy controls.
 - **[AI Resume Adapter Bot](https://github.com/gdc88/ai-resume-adapter-bot)** — Career automation layer: ATS/job-description analysis and truthful resume tailoring workflow for the German market.
-- **[JobMatch AI](https://github.com/gdc88/JobMatch-AI)** — Course/final-project layer: static MVP for job-match analysis, recruiter message drafting, and portfolio demonstration.
+- **[JobMatch AI](https://github.com/gdc88/JobMatch-AI)** — Course/final-project layer: static MVP for job-match analysis, outreach message support, and portfolio demonstration.
 
 Growth direction:
 
-- Keep public repositories sanitized and recruiter-safe.
+- Keep public repositories sanitized and public-safe.
 - Prefer clear architecture, safety boundaries, screenshots/visuals, and evidence over private operational data.
 - Update each project as the overall system matures: better runbooks, stronger guardrails, clearer German-market positioning, and more polished demos.
-- Use GitHub as the proof layer and LinkedIn as the recruiter funnel once the LinkedIn profile is aligned with the same positioning.
+- Use GitHub as the proof layer for public technical growth.
